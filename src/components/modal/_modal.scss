@@ -1,0 +1,219 @@
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and stuff
+
+$modal-dialog-margin:                   $spacer-sm;
+$modal-dialog-margin-top:               ($spacer-sm * 4);
+
+$modal-bg:                            hsl(0, 0%, 100%);
+$modal-border-color:                    $color-ink-dark-border;
+$modal-border-width:                    $border-width;
+$modal-border-radius:                   0;
+$modal-box-shadow-xs:                   $box-shadow-z4;
+$modal-box-shadow-sm-up:                $box-shadow-z5;
+
+$modal-backdrop-bg:                     $color-secondary;
+$modal-backdrop-opacity:                .94;
+$modal-header-border-color:             $color-ink-dark-border;
+$modal-footer-border-color:             $color-ink-dark-border;
+$modal-header-border-width:             $border-width;
+$modal-footer-border-width:             $border-width;
+$modal-header-padding:                  ($spacer-sm * 2);
+
+$modal-lg:                              $panel-width-xl;
+$modal-md:                              $panel-width-lg;
+$modal-sm:                              $panel-width-sm;
+
+$modal-transition:                      transform $duration-lg $easing;
+
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and stuff
+
+
+.modal-open {
+  // Kill the scroll on the body
+  overflow: hidden;
+
+  .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+// WRAPPER
+
+.modal {
+  display: none;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal;
+  // We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
+  // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
+  // See also https://github.com/twbs/bootstrap/issues/17695
+}
+
+// INNER CONTAINER TO POSITION THE MODAL WITH BOTTOM PADDING
+.modal-dialog {
+  margin: $modal-dialog-margin;
+
+  // allow clicks to pass through for custom click handling to close modal
+  pointer-events: none;
+  position: relative;
+  width: auto;
+
+  // When fading in the modal, animate it to slide down
+  .modal.fade & {
+    transform: translate(0, -25%);
+    transition: $modal-transition;
+  }
+  .modal.show & {
+    transform: translate(0, 0);
+  }
+}
+
+// Actual modal
+.modal-content {
+  background-clip: padding-box;
+  background-color: $modal-bg;
+  border-radius: $modal-border-radius;
+  border: $modal-border-width solid $modal-border-color;
+  box-shadow: $modal-box-shadow-xs;
+  display: flex;
+  flex-direction: column;
+
+  // Remove focus outline from opened modal
+  outline: 0;
+
+  // counteract the pointer-events: none; in the .modal-dialog
+  pointer-events: auto;
+  position: relative;
+
+  // Ensure `.modal-content` extends the full width of the parent `.modal-dialog`
+  width: 100%;
+}
+
+// Modal background
+.modal-backdrop {
+  background-color: $modal-backdrop-bg;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal-backdrop;
+
+  // Fade for backdrop
+  &.fade { opacity: 0; }
+  &.show { opacity: $modal-backdrop-opacity; }
+}
+
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  overflow: scroll;
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+}
+
+// Scale up the modal
+@include media-breakpoint-up(sm) {
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    margin: $modal-dialog-margin-y-sm-up auto;
+    max-width: $modal-md;
+  }
+
+  .modal-content {
+    box-shadow: $modal-box-shadow-sm-up;
+  }
+
+  .modal-sm { max-width: $modal-sm; }
+}
+
+@include media-breakpoint-up(lg) {
+  .modal-lg { max-width: $modal-lg; }
+}
+
+
+// -----------------------------------------------------------------------------
+// CONTAINERS OVERRIDES
+// -----------------------------------------------------------------------------
+
+.modal-dialog {
+  @include media-breakpoint-up(lg) {
+    max-width: $panel-width-xl;
+  }
+}
+
+// MODAL BODY
+
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  // Enable `flex-grow: 1` so that the body take up as much space as possible
+  // when should there be a fixed height on `.modal-dialog`.
+  flex: 1 1 auto;
+  padding: ($spacer-sm * 2);
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    padding: 3.8rem ($spacer-sm * 4) 7.6rem
+  }
+}
+
+// -----------------------------------------------------------------------------
+// HEADLINES AND BODY COPY
+// -----------------------------------------------------------------------------
+
+.modal__title {
+  font-family: $font-family-headings;
+  font-size: $font-size-headline-sm;
+  font-weight: 300;
+  line-height: $line-height-headline-sm;
+  margin-bottom: $spacer;
+  padding-right: 4rem;
+}
+
+// BUTTON CLOSE
+.modal__close {
+  background: transparent url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpolygon%20fill%3D%22%23C4A56E%22%20points%3D%2212.167%2010.046%2021.713%20.5%2023.835%202.621%2014.289%2012.167%2023.835%2021.713%2021.713%2023.835%2012.167%2014.289%202.621%2023.835%20.5%2021.713%2010.046%2012.167%20.5%202.621%202.621%20.5%22%2F%3E%3C%2Fsvg%3E') 50% 50% no-repeat;
+  border: 0;
+  border-radius: 1.8rem;
+  cursor: pointer;
+  display: inline-block;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  pointer-events: auto;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  touch-action: manipulation;
+  width: 3.6rem;
+  height: 3.6rem;
+  z-index: $zindex-modal;
+
+  &:focus {
+    box-shadow: 0 0 0 4px lighten($color-primary, 30%);
+    outline: 0;
+  }
+}
+
+.modal-body.is-project [class^='col-'] {
+  margin-bottom: $spacer-sm;
+}
+
+

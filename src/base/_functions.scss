@@ -1,0 +1,18 @@
+// -----------------------------------------------------------------------------
+// TYPOGRAPHY
+// -----------------------------------------------------------------------------
+
+/// Headline Line Height Calculation
+/// @param {Number} $headline-size - Unitless font-size of headline. E.g. 45.
+/// @param {Number} $ratio [1.25] - Line height ratio
+
+@function line-height($headline-size, $ratio: 1.25, $factor: 8) {
+
+  $rough-value: $headline-size * $ratio;
+
+  @if $rough-value % $factor == 0 {
+    @return $ratio;
+  } @else {
+    @return ((round($rough-value / $factor) * $factor) / $headline-size);
+  }
+}

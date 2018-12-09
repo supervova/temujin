@@ -1,0 +1,163 @@
+// stylelint-disable selector-list-comma-newline-after, selector-no-qualifying-type
+
+/// Explanations can be found on the following pages.
+/// @link https://github.com/necolas/normalize.css/blob/master/normalize.css Normalize.css
+/// @link https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss Bootstrap's Reboot
+/// @link https://meyerweb.com/eric/tools/css/reset/ Eric Meyer’s Reset
+
+// -----------------------------------------------------------------------------
+// GENERIC
+// -----------------------------------------------------------------------------
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+[tabindex='-1']:focus {
+  outline: 0 !important;
+}
+
+// -----------------------------------------------------------------------------
+// DOCUMENT
+// -----------------------------------------------------------------------------
+
+html {
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 62.5%;
+  text-size-adjust: 100%;
+}
+
+// stylelint-disable at-rule-no-vendor-prefix
+@at-root {
+  @-ms-viewport {
+    width: device-width;
+  }
+}
+// stylelint-enable at-rule-no-vendor-prefix
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+}
+
+// -----------------------------------------------------------------------------
+// SECTIONS
+// -----------------------------------------------------------------------------
+
+main {
+  display: block;
+}
+
+hr {
+  box-sizing: content-box;
+  overflow: visible;
+  height: 0;
+}
+
+// -----------------------------------------------------------------------------
+// CORE CONTENT
+// -----------------------------------------------------------------------------
+
+// stylelint-disable property-no-vendor-prefix
+
+a {
+  -webkit-text-decoration-skip: objects;
+
+  &:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+// stylelint-enable property-no-vendor-prefix
+
+blockquote,
+q {
+  quotes: none;
+
+  &::before,
+  &::after {
+    content: '';
+    content: none;
+  }
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// MEDIA
+img,
+audio,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+
+// -----------------------------------------------------------------------------
+// FORM
+// -----------------------------------------------------------------------------
+
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='file'] {
+  border-radius: 0;
+}
+
+input[type='text']::-ms-clear {
+  display: none;
+}
+
+fieldset {
+  border: 0;
+  min-width: 0;
+}
+
+

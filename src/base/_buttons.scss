@@ -1,0 +1,45 @@
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  background: $color-secondary;
+  color: $color-ink-light-normal;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  font-family: $font-family-headings;
+  font-size: $font-size-base-desktop;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0 ($spacer-sm * 2);
+  touch-action: manipulation;
+  transition:
+    background-color $duration $easing,
+    box-shadow $duration $easing;
+  user-select: none;
+  vertical-align: middle;
+  height: 4.3rem;
+
+  &:hover {
+    background: lighten($color-secondary, 10%);
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 4px lighten($color-primary, 25%);
+  }
+
+  &:active {
+    box-shadow:
+      inset 0 3px 5px hsl(0, 0%, 0%),
+      inset 0 0 0 100px hsla(0, 0%, 0%, .5);
+    transform: translate3d(0, 0, 0);
+  }
+}
+

@@ -1,0 +1,32 @@
+@import 'base/functions';
+@import 'base/variables';
+
+// BS grid
+@import './node_modules/bootstrap/scss/functions';
+@import './node_modules/bootstrap/scss/variables';
+@import './node_modules/bootstrap/scss/mixins/breakpoints';
+@import './node_modules/bootstrap/scss/mixins/grid-framework';
+@import './node_modules/bootstrap/scss/mixins/grid';
+@import './node_modules/bootstrap/scss/grid';
+@import './node_modules/bootstrap/scss/utilities/display';
+
+// Base
+@import 'base/normalize';
+@import 'base/body';
+@import 'base/headings';
+@import 'base/layout';
+@import 'base/icons/icons';
+@import 'base/buttons';
+@import 'base/form';
+
+// Components
+@import 'components/header/header';
+@import 'components/section/section';
+@import 'components/section/clients';
+@import 'components/carousel/carousel';
+@import 'components/forms/contact-form';
+@import 'components/footer/footer';
+@import 'components/modal/modal';
+
+// Helpers & Print
+@import 'base/print';

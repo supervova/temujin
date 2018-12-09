@@ -1,0 +1,9 @@
+.container {
+  padding-left: ($spacer-sm * 2);
+  padding-right: ($spacer-sm * 2);
+
+  @include media-breakpoint-up(md) {
+    padding-left: ($spacer-sm * 4);
+    padding-right: ($spacer-sm * 4);
+  }
+}

@@ -1,0 +1,163 @@
+.header {
+  background-color: $color-secondary;
+  background-image:
+    linear-gradient(rgba($color-secondary, .82), rgba($color-secondary, .82)),
+    linear-gradient(rgba($color-secondary, .46), rgba($color-secondary, .46)),
+    url('/img/components/hero/hero.jpg');
+  background-blend-mode: multiply, color, normal;
+  background-position:
+    center center,
+    center top;
+  background-repeat: epeat, repeat, no-repeat;
+  color: $color-ink-light-normal;
+  text-align: center;
+  padding-top: 3.2rem;
+  position: relative;
+  height: 360px;
+
+  @include media-breakpoint-up(md) {
+    background-image:
+      linear-gradient(rgba($color-secondary, .82), rgba($color-secondary, .82)),
+      linear-gradient(rgba($color-secondary, .46), rgba($color-secondary, .46)),
+      url('/img/components/hero/hero-md.jpg');
+    padding-top: 107px;
+    padding-bottom: 100px;
+    height: 670px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-image:
+      radial-gradient(
+        circle,
+        transparent 68%,
+        rgba(13, 12, 12, .5) 84%,
+        rgb(13, 12, 12) 92%),
+      linear-gradient(rgba($color-secondary, .82), rgba($color-secondary, .82)),
+      linear-gradient(rgba($color-secondary, .46), rgba($color-secondary, .46)),
+      url('/img/components/hero/hero-lg.jpg');
+    background-blend-mode: normal, multiply, color, normal;
+    background-repeat: no-repeat, repeat, repeat, no-repeat;
+    background-size:
+      1516px 670px,
+      auto auto;
+  }
+}
+
+// LOGO
+
+.p-home .header .logo {
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+  transition: opacity $duration $easing;
+  width: 195px;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+// Scroll Down Icon
+.p-home .header::after {
+  @include media-breakpoint-up(lg) {
+    background: transparent url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2013%2050%22%3E%3Crect%20x=%225%22%20y=%2215%22%20width=%223%22%20height=%226%22%20fill=%22#fff%22/%3E%3Cpath%20d=%22M6.5,11A6.5,6.5,0,0,0,0,17.5v12a6.5,6.5,0,0,0,13,0v-12A6.5,6.5,0,0,0,6.5,11ZM12,29.5a5.5,5.5,0,0,1-11,0v-12a5.5,5.5,0,0,1,11,0Z%22%20fill=%22#fff%22/%3E%3Cpath%20d=%22M7,11H6.06V8.25a3.42,3.42,0,0,0-1.7-3.52A5.15,5.15,0,0,1,2,0h.78a4.37,4.37,0,0,0,2,4.07A4.61,4.61,0,0,1,7,8.25Z%22%20fill=%22#fff%22/%3E%3Cpath%20d=%22M6.5,43.26,12,41,6.5,50,1,41Z%22%20fill=%22#fff%22/%3E%3Cpath%20d=%22M6.5,40,12,38v.88L6.5,41,1,38.88V38Z%22%20fill=%22#fff%22/%3E%3C/svg%3E') no-repeat;
+    content: '';
+    display: block;
+    fill: hsl(0, 0%, 100%);
+    position: absolute;
+    top: auto;
+    bottom: 30px;
+    left: 50%;
+    transform: translate3d(-.6rem, 0, 0);
+    width: 13px;
+    height: 50px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// MENU
+// -----------------------------------------------------------------------------
+
+.menu {
+  margin: 0 auto;
+  padding: 2rem 0 0;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 7rem;
+  }
+}
+
+.menu li {
+  display: inline-block;
+  width: auto;
+  padding: 0 $spacer-sm;
+  text-align: center;
+}
+
+.menu li a {
+  color: $color-ink-highlight;
+  font-family: $font-family-headings;
+  font-size: $font-size-base;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color $duration $easing;
+
+  &:hover {
+    color: hsl(0, 0%, 100%);
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// CONTACTS
+// -----------------------------------------------------------------------------
+
+.contacts-bar {
+  background: $color-secondary;
+}
+
+.contacts-bar__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-end;
+  }
+}
+
+
+.contacts-bar__menu li {
+  display: inline-block;
+  text-align: center;
+  margin-left: $spacer-sm;
+  padding: 0 1px;
+  width: auto;
+}
+
+.contacts-bar__menu  a {
+  color: $color-ink-light-normal;
+  font-family: $font-family-headings;
+  font-size: $font-size-sm;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all $duration $easing;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.contacts-bar__menu .icon {
+  margin-right: $spacer-sm;
+  vertical-align: -.9rem;
+  width: 28px;
+  height: 28px;
+}
+

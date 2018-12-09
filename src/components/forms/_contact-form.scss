@@ -1,0 +1,36 @@
+
+// -----------------------------------------------------------------------------
+// CONTACTS FORM
+// -----------------------------------------------------------------------------
+
+.form.is-contacts {
+  margin: auto;
+
+  @include media-breakpoint-up(md) {
+    max-width: 50rem;
+  }
+}
+
+// Input container
+.form.is-contacts .form__control {
+  @include media-breakpoint-up(md) {
+    width: 36rem;
+  }
+}
+
+.form__group.is-actions {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    justify-content: space-between;
+
+    > .btn,
+    > .form__control {
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.form.is-contacts .btn {
+  width: 12rem;
+}

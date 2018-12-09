@@ -1,0 +1,128 @@
+
+// stylelint-disable selector-class-pattern, order/order, selector-no-qualifying-type
+
+// INTRO
+.section__body {
+  font-family: $font-family-headings;
+  font-size: $font-size-lg;
+  font-weight: 300;
+  line-height: $line-height-lg;
+  text-align: center;
+}
+
+// CONTAINERS
+.section {
+  padding: 30px 0 0;
+
+  // Highlight
+  &.is-highlight {
+    background: $color-background-highlight;
+    padding: 40px 0;
+
+    h2 {
+      color: $color-ink-light-normal;
+
+      &::before {
+        background: $color-ink-light-normal;
+      }
+    }
+  }
+
+  // Negative
+
+  &.is-negative {
+    background: $color-secondary;
+
+    h2 span {
+      color: $color-ink-light-normal;
+    }
+  }
+}
+
+
+// HEADINGS
+.section h2,
+.section__title {
+  color: $color-ink-highlight;
+  font-family: $font-family-headings;
+  font-size: $font-size-headline-sm;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  padding-left: 40px;
+  position: relative;
+
+  &::before {
+    background: $color-ink-highlight;
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+  }
+
+  span {
+    color: $color-secondary;
+    display: block;
+    font-family: $font-family-headings;
+    font-size: $font-size-sm;
+    font-weight: 400;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 0;
+
+    &::before {
+      left: -40px;
+    }
+  }
+}
+
+.is-clients h2 {
+  margin-bottom: 0;
+}
+
+// SERVICES
+
+.service {
+  align-items: center;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 70px;
+  }
+}
+
+.service__pic {
+  text-align: center;
+}
+
+.service__desc h3 {
+  font-family: $font-family-headings;
+  font-size: $font-size-headline-sm;
+  font-weight: 500;
+  line-height: $line-height-headline-sm;
+  text-transform: uppercase;
+
+  &.has-text-right {
+    @include media-breakpoint-up(md) {
+      text-align: right;
+    }
+  }
+}
+
+
+// MAP
+
+.map {
+  filter: grayscale(100%);
+  width: 100%;
+  height: 500px;
+}
+
+.top-offset {
+  margin-top: 30px;
+}
+
+

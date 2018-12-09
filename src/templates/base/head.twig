@@ -1,0 +1,57 @@
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>{{ post.title }}</title>
+
+  <meta property="og:title" content="{{ post.title }}">
+  <meta name="description" content="{{ post.description }}">
+  <meta property="og:description" content="{{ post.description }}">
+  <meta property="og:image" content="{{ post.image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="{{ post.link }}">
+  <link rel="canonical" href="{{ post.link }}">
+  {# <meta property="fb:admins" content="{{ site.facebookAdmins }}"> #}
+
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="theme-color" content="{{ company.color }}">
+
+  <link rel="apple-touch-icon" href="{{ site.theme.link }}/img/base/icons/icon.png">
+  {# Place favicon.ico in the root directory #}
+
+  {# DNS prefetching and core assets preload #}
+  <link rel="dns-prefetch" href="{{ site.prefetch1 }}">
+
+    {# <link rel="alternate" hreflang="en" href="{{ post.hreflangEN }}"> #}
+  {# <link rel="alternate" href="{{ site.rss }}" type="application/rss+xml" title="{{ site.name }} — RSS"> #}
+
+  {% if site.fonts %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ site.fonts }}">
+  {% endif %}
+  <link rel="stylesheet" href="{{ site.theme.link }}/css/style.css">
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@id": "{{ site.url }}/#organization",
+      "@type": "Organization",
+      "url": "{{ site.url }}",
+      "logo": "{{ company.logo }}",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "{{ company.phone }}",
+        "contactType": "sales",
+        "areaServed": ["RU"]
+      }]
+    }
+  </script>
+
+  {# VK Api #}
+  {# <script type="text/javascript" src="https://vk.com/js/api/openapi.js?136"></script> #}
+
+  {# Google Tag Manager #}
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK3XDPZ');</script>

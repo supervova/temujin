@@ -1,0 +1,287 @@
+// stylelint-disable selector-class-pattern, order/order
+
+// -----------------------------------------------------------------------------
+// 🎨  COLORS
+// -----------------------------------------------------------------------------
+/* #region */
+
+// COLOR NAMES
+
+$grey-l20:                            hsl(0, 2%, 16%);
+$grey-l16:                            hsl(0, 2%, 16%);
+
+$red:                                 hsl(8, 38%, 58%);
+$orange:                              hsl(38, 38%, 58%);
+$yellow:                              hsl(60, 58%, 58%);
+// $lime:                                hsl(90, 60%, 50%);
+$green:                               hsl(128, 38%, 58%);
+// $fun-green:                           hsl(150, 60%, 25%);
+// $teal:                                hsl(180, 60%, 25%);
+// $cobalt:                              hsl(210, 60%, 50%);
+$blue:                                hsl(248, 38%, 58%);
+// $violet:                              hsl(270, 60%, 50%);
+// $magenta:                             hsl(300, 60%, 50%);
+// $crimson:                             hsl(330, 60%, 50%);
+
+
+// COLOR ROLES
+
+$color-primary:                         $orange;
+$color-primary-l1:                      saturate(lighten($orange, 24), 10);
+$color-secondary:                     hsl(0, 2%, 16%);
+
+// Backgrounds
+$color-background-primary:            hsl(0, 0%, 100%);
+$color-background-highlight:            $color-primary;
+
+// Foregrounds / Inks
+$color-ink-headline:                    $color-secondary;
+$color-ink-highlight:                   $color-primary;
+$color-ink-normal:                      $color-secondary;
+$color-ink-muted:                       lighten($color-secondary, 20%);
+// $color-ink-hint:                        hsl(214, 3%, 60%);
+// $color-ink-disabled:                    hsl(214, 3%, 60%);
+// $color-ink-icon:                        hsl(214, 3%, 60%);
+// $color-ink-border:                      hsl(214, 3%, 90%);
+$color-ink-link:                        $color-primary;
+$color-ink-link-hover:                  $blue;
+$color-ink-focus-outline:               lighten($color-primary, 25%);
+
+// $color-ink-dark-headline:             hsla(0, 0%, 0%, .87);
+// $color-ink-dark-normal:               hsla(0, 0%, 0%, .87);
+// $color-ink-dark-muted:                hsla(0, 0%, 0%, .6);
+// $color-ink-dark-hint:                 hsla(0, 0%, 0%, .38);
+// $color-ink-dark-disabled:             hsla(0, 0%, 0%, .38);
+// $color-ink-dark-icon:                 hsla(0, 0%, 0%, .38);
+$color-ink-dark-border:               hsla(0, 0%, 0%, .12);
+// $color-ink-dark-link:                   darken($blue, 5%);
+$color-ink-dark-link-hover:             $color-primary;
+$color-ink-dark-focus-outline:          lighten($color-primary, 25%);
+
+$color-ink-light-headline:            hsl(0, 0%, 100%);
+$color-ink-light-highlight:             $color-primary;
+$color-ink-light-normal:              hsl(0, 0%, 100%);
+// $color-ink-light-muted:               hsla(0, 0%, 100%, .7);
+// $color-ink-light-hint:                hsla(0, 0%, 100%, .5);
+// $color-ink-light-disabled:            hsla(0, 0%, 100%, .5);
+// $color-ink-light-icon:                hsla(0, 0%, 100%, .5);
+// $color-ink-light-border:              hsla(0, 0%, 100%, .12);
+$color-ink-light-link:                  lighten($color-primary, 5%);
+$color-ink-light-link-hover:            $color-primary;
+$color-ink-light-focus-outline:         lighten($color-primary, 25%);
+
+/* #endregion */
+
+// -----------------------------------------------------------------------------
+// 📰 LAYOUT
+// -----------------------------------------------------------------------------
+/* #region */
+$spacer-sm:                             .8rem;
+$spacer:                                $spacer-sm * 3; // empty line
+
+// Maps to generate spacing classes
+$spacers: (
+  0: 0,
+  sm: $spacer-sm,
+  2sm: ($spacer-sm * 2),
+  1: $spacer,
+  2: ($spacer * 2),
+  3: ($spacer * 3)
+);
+
+// Maps to generate maximum width of the container for each breakpoint
+$container-max-widths: (
+  lg: 1044px, // Tablet in landscape
+  xl: 1200px, // Laptop
+  xxl: 1776px // Full HD - 1920x1080 and up
+);
+
+$outside-gaps:                          128px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 568px,
+  md: 768px,
+  lg: 992px,
+);
+
+// Grid
+$grid-columns-xs:                       4;
+$grid-columns-md:                       8;
+$grid-columns:                          12;
+$grid-gutter-0:                         0;
+$grid-gutter-xs:                        ($spacer-sm / 2);
+$grid-gutter-width:                     $spacer-sm;
+$grid-gutter-md:                        ($spacer-sm * 2);
+$grid-gutter-lg:                        $spacer;
+$grid-gutter-xl:                        ($spacer-sm * 4);
+
+/* #endregion */
+
+// -----------------------------------------------------------------------------
+// 🔠 TYPOGRAPHY
+// -----------------------------------------------------------------------------
+/* #region */
+
+// stylelint-disable indentation
+$font-family-base:
+ 'Helvetica Neue',
+  Helvetica,
+  Arial,
+  sans-serif;
+
+$font-family-headings:
+ 'Roboto',
+  Helvetica,
+  Arial,
+  sans-serif,
+ 'Apple Color Emoji',
+ 'Segoe UI Emoji',
+ 'Segoe UI Symbol';
+
+$font-family-monospace:
+ 'Fira Code',
+  Menlo,
+  Courier,
+ 'Courier New',
+  monospace;
+// stylelint-enable indentation
+
+$font-size-sm:                          $spacer-sm * 1.5; // 12px
+$line-height-sm:                        1.333; // 16px
+
+$font-size-base-desktop:                1.4rem;
+$line-height-base-desktop:              1.429;
+
+$font-size-base:                        ($spacer-sm * 2); // 16px
+$line-height-base:                      1.5; // 24px
+
+$font-size-lg:                          1.8rem;
+$line-height-lg:                        1.556; // 28px
+
+$font-size-headline-sm:                 2rem; // 20px
+$line-height-headline-sm:               1.2; // 24px
+
+$font-size-headline-md:                 ($spacer-sm * 3); // 24px
+$line-height-headline-md:               line-height(24);
+$font-weight-headline-md:               500;
+
+$font-size-headline-lg:                 ($spacer-sm * 4); // 32px
+$line-height-headline-lg:               line-height(32); // 40px
+$font-weight-headline-lg:               400;
+
+$font-size-headline-xl:                 $spacer-sm * 5; // 40px
+$line-height-headline-xl:               line-height(40);
+$font-weight-headline-xl:               400;
+
+$font-size-display-2:                   $spacer-sm * 5;
+$line-height-display-2:                 line-height(40);
+
+$font-size-display-1:                   $spacer-sm * 8;
+$line-height-display-1:                 line-height(64);
+
+$list-bullet:                           url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%225%22%20height%3D%227%22%20viewBox%3D%220%200%205%207%22%3E%3Ccircle%20cx%3D%222.5%22%20cy%3D%222.5%22%20r%3D%222.5%22%20fill-opacity%3D%22.38%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+
+/* #endregion */
+
+// -----------------------------------------------------------------------------
+// 📦 COMPONENTS BOXES
+// -----------------------------------------------------------------------------
+/* #region */
+
+$border-width:                          1px;
+
+// BOX BORDER RADIUS
+
+// Alerts, Cards, Rectangular Images
+$border-radius-sm:                      3px;
+
+// Buttons
+$border-radius:                         5px;
+
+// Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks, Popovers, Tooltips
+$border-radius-lg:                      12px;
+
+// Modals
+$border-radius-xl:                      24px;
+
+
+// BOX SHADOWS
+
+// Raised buttons, Cards, Alerts, App Bar, Bottom Navigation Bar, Switches
+$box-shadow-z1:                         0 1px 0 hsla(0, 0%, 0%, .06);
+
+// FAB, Raised Button hover state, Snackbars
+$box-shadow-z2:                         0 3px 6px -1px $color-ink-dark-border, 0 5px 10px -1px hsla(0, 0%, 0%, .06);
+
+// Drawers, Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks
+$box-shadow-z3:                         0 10px 20px -2px hsla(0, 0%, 0%, .1), 0 6px 6px -2px hsla(0, 0%, 0%, .06);
+
+// Popovers, Tooltips
+$box-shadow-z4:                         0 14px 28px -4px $color-ink-dark-border, 0 8px 16px -4px $color-ink-dark-border;
+
+// Modals
+$box-shadow-z5:                         0 40px 72px -12px $color-ink-dark-border, 0 24px 24px -8px hsla(0, 0%, 0%, .16);
+
+// BOX Z-INDEX
+$zindex-dropdown:                       1000;
+$zindex-sticky:                         1020;
+$zindex-fixed:                          1030;
+$zindex-modal-backdrop:                 1040;
+$zindex-modal:                          1050;
+$zindex-popover:                        1060;
+$zindex-tooltip:                        1070;
+
+
+// PANELS WIDTH
+
+$panel-width-xs:                        200px;
+
+// Tooltips, mobile drawers
+$panel-width-sm:                        280px;
+
+// Dropdowns, popovers, tablet and desktop drawers
+$panel-width:                           320px;
+
+// Wide drawers
+$panel-width-lg:                        640px;
+
+// Modals
+$panel-width-xl:                        1054px;
+
+
+/* #endregion */
+
+
+// -----------------------------------------------------------------------------
+// 👻 ANIMATION & TRANSITIONS
+// -----------------------------------------------------------------------------
+/* #region */
+
+// Use shorter for disappearing  elemnts. To do that set transitions on both
+// states, like this:
+// .el { transition: all --duration-disappearance --easing-disappearance; }
+// .el.hidden { transition: all --duration-appearance --easing-appearance; }
+$duration-xs:                           .1s;
+
+// Medium elements changing states
+// and disappearance
+$duration-sm:                           .2s;
+
+// Medium elements appearance,
+// large elements changing states
+// and disappearance
+$duration:                              .25s;
+
+// Large elements appearance
+$duration-lg:                           .3s;
+
+// Slower large elements appearance
+$duration-xl:                           .5s;
+$duration-xxl:                          .8s;
+
+$easing:                                cubic-bezier(.4, 0, .2, 1);
+$easing-appearance:                     cubic-bezier(0, 0, .2, 1);
+$easing-disappearance:                  cubic-bezier(.4, 0, 1, 1);
+
+/* #endregion */

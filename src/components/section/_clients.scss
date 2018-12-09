@@ -1,0 +1,30 @@
+// Clients
+
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.is-clients .grid__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 50%;
+
+  // Cell height
+  min-height: 100px;
+
+  @include media-breakpoint-up(md) {
+    flex-basis: 33.333%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex-basis: 25%;
+  }
+}
+
+.is-clients .grid__item > svg {
+  width: 80px;
+  height: 80px;
+}
