@@ -3,7 +3,7 @@
   background-image:
     linear-gradient(rgba($color-secondary, .82), rgba($color-secondary, .82)),
     linear-gradient(rgba($color-secondary, .46), rgba($color-secondary, .46)),
-    url('/img/components/hero/hero.jpg');
+    url('./img/components/hero/hero.jpg');
   background-blend-mode: multiply, color, normal;
   background-position:
     center center,
@@ -19,7 +19,7 @@
     background-image:
       linear-gradient(rgba($color-secondary, .82), rgba($color-secondary, .82)),
       linear-gradient(rgba($color-secondary, .46), rgba($color-secondary, .46)),
-      url('/img/components/hero/hero-md.jpg');
+      url('./img/components/hero/hero-md.jpg');
     padding-top: 107px;
     padding-bottom: 100px;
     height: 670px;
@@ -34,7 +34,7 @@
         rgb(13, 12, 12) 92%),
       linear-gradient(rgba($color-secondary, .82), rgba($color-secondary, .82)),
       linear-gradient(rgba($color-secondary, .46), rgba($color-secondary, .46)),
-      url('/img/components/hero/hero-lg.jpg');
+      url('./img/components/hero/hero-lg.jpg');
     background-blend-mode: normal, multiply, color, normal;
     background-repeat: no-repeat, repeat, repeat, no-repeat;
     background-size:
