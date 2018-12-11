@@ -1,0 +1,103 @@
+// stylelint-disable selector-list-comma-newline-after, order/order
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+h1, h2 {
+  // OpenType kerning
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  letter-spacing: -.02em;
+}
+
+// Heading 1
+// Expected %-placeholder "%h1" to match specified pattern (scss/percent-placeholder-pattern)
+h1,
+%heading-h1 {
+  font-size: $font-weight-headline-lg;
+  font-weight: $font-weight-headline-lg;
+  line-height: $line-height-headline-lg;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-weight-headline-xl;
+    line-height: $line-height-headline-xl;
+  }
+}
+
+// Heading 2
+h2,
+%heading-h2 {
+  font-size: $font-weight-headline-md;
+  font-weight: $font-weight-headline-md;
+  line-height: $line-height-headline-md;
+
+  h1 + & { padding-top: 0; }
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-weight-headline-lg;
+    line-height: $line-height-headline-lg;
+  }
+}
+
+h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 500;
+  margin: 0;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+h3 + h4 {
+  margin-top: $spacer;
+}
+
+// -----------------------------------------------------------------------------
+// STYLES
+// -----------------------------------------------------------------------------
+
+.subhead,
+%subhead {
+  color: $color-ink-highlight;
+  font-family: $font-family-headings;
+  font-size: $font-size-headline-sm;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  padding-left: 40px;
+  position: relative;
+
+  &::before {
+    background: $color-ink-highlight;
+    content: '';
+    position: absolute;
+    top: .4rem;
+    left: 0;
+    width: 30px;
+    height: 3px;
+  }
+
+  span {
+    color: $color-secondary;
+    display: block;
+    font-family: $font-family-headings;
+    font-size: $font-size-sm;
+    font-weight: 400;
+    transform: translate3d(0, .1rem, 0);
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 0;
+
+    &::before {
+      left: -40px;
+    }
+  }
+}
+
+.table-caption {
+  color: $color-ink-muted;
+  padding-bottom: 1.5rem;
+}

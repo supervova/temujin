@@ -12,12 +12,13 @@
 
 // Base
 @import 'base/normalize';
-@import 'base/body';
-@import 'base/headings';
+@import 'base/content/body';
+@import 'base/content/headings';
 @import 'base/layout';
 @import 'base/icons/icons';
 @import 'base/buttons';
 @import 'base/form';
+@import 'base/content/tables';
 
 // Components
 @import 'components/header/header';

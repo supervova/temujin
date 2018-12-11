@@ -41,43 +41,10 @@
 
 
 // HEADINGS
+
 .section h2,
 .section__title {
-  color: $color-ink-highlight;
-  font-family: $font-family-headings;
-  font-size: $font-size-headline-sm;
-  font-weight: 500;
-  text-align: left;
-  text-transform: uppercase;
-  margin: 0 0 20px;
-  padding-left: 40px;
-  position: relative;
-
-  &::before {
-    background: $color-ink-highlight;
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 0;
-    width: 30px;
-    height: 3px;
-  }
-
-  span {
-    color: $color-secondary;
-    display: block;
-    font-family: $font-family-headings;
-    font-size: $font-size-sm;
-    font-weight: 400;
-  }
-
-  @include media-breakpoint-up(lg) {
-    padding-left: 0;
-
-    &::before {
-      left: -40px;
-    }
-  }
+  @extend %subhead;
 }
 
 .is-clients h2 {
@@ -100,15 +67,22 @@
 
 .service__desc h3 {
   font-family: $font-family-headings;
-  font-size: $font-size-headline-sm;
+  font-size: $font-size-base;
   font-weight: 500;
-  line-height: $line-height-headline-sm;
+  line-height: $line-height-base;
   text-transform: uppercase;
+  padding-bottom: .4rem;
 
-  &.has-text-right {
-    @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(md) {
+    &.has-text-right {
       text-align: right;
     }
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-base-desktop;
+    line-height: $line-height-base-desktop;
+    padding-bottom: .4rem;
   }
 }
 

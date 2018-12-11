@@ -2,14 +2,13 @@
 {% set
   site = {
     language_attributes: "ru",
-    url: "https://www.example.tld",
-    rss: "",
+    url: "http://temgroup.ru",
+    base: "https://supervova.github.io",
     fonts: "Roboto:300,400,500&amp;subset=cyrillic",
     theme: {
       link: "."
     },
     googleTagManager: "GTM-WXTNS9W",
-    facebookAdmins: "",
     prefetch1: "https://fonts.googleapis.com/"
   }
 %}
@@ -17,10 +16,10 @@
 {% set
   company = {
     name: "Тимуджин Групп",
-    slag: "company-name",
-    logo: site.url ~ "/a/img/components/logo/company-logo.svg",
-    color: "#f33",
-    phone: ""
+    slag: "temgroup",
+    logo: site.url ~ "/img/components/logo/logo.svg",
+    color: "#c4a56e",
+    phone: "+7 (903) 291-68-95"
   }
 %}
 {% endblock %}
@@ -44,32 +43,36 @@
       <nav class="container">
 
           <a class="logo" href="/">
-            <img src="./img/components/logo/logo.svg" alt="Логотип Temujin Group">
+            <span class="logo__mark">Агентство</span>
+            <span class="logo__type">
+              <span class="logo__temujin">Temujin</span>
+              <span class="logo__group">Group</span>
+            </span>
           </a>
 
           <ul class="menu">
             <li class="d-none d-sm-inline-block">
-              <a class="menu__link is-local" href="#about">
+              <a class="menu__link" href="/index.html#about">
                 О нас
               </a>
             </li>
             <li>
-              <a class="menu__link is-local" href="#service">
+              <a class="menu__link" href="/index.html#service">
                 Услуги
               </a>
             </li>
             <li>
-              <a class="menu__link is-local" href="#projects">
+              <a class="menu__link" href="/index.html#projects">
                 Проекты
               </a>
             </li>
             <li>
-              <a class="menu__link" href="/education.html">
+              <a class="menu__link is-active" href="/education.html">
                 Образование
               </a>
             </li>
             <li class=" d-none d-sm-inline-block">
-              <a class="menu__link is-local" href="#contacts">
+              <a class="menu__link" href="/index.html#contacts">
                 Контакты
               </a>
             </li>
@@ -77,17 +80,19 @@
       </nav>
 
     </header>
+  {% endblock %}
 
+  {% block header_contacts %}
     {# Direct Contacts #}
     <div class="contacts-bar">
       <div class="container">
         <ul class="contacts-bar__menu">
-          {# <li><a href="#"><img src="./img/fb.png" alt="fb"></a></li>
-          <li><a href="#"><img src="./img/twitter.png" alt="twitter"></a></li> #}
+          {# <li><a href="#"><img src="/img/fb.png" alt="fb"></a></li>
+          <li><a href="#"><img src="/img/twitter.png" alt="twitter"></a></li> #}
           <li class="d-none d-sm-inline-block">
             <a href="mailto:timujin.group@gmail.com">
               <svg class="icon" role="presentation">
-                <use xlink:href="./img/base/icons/sprite.svg#icon-md-mail"></use>
+                <use xlink:href="/img/base/icons/sprite.svg#icon-md-mail"></use>
               </svg>
               timujin.group@gmail.com
             </a>
@@ -95,7 +100,7 @@
           <li>
             <a href="tel:+7-903-291-6895">
               <svg class="icon" role="presentation">
-                <use xlink:href="./img/base/icons/sprite.svg#icon-md-phone"></use>
+                <use xlink:href="/img/base/icons/sprite.svg#icon-md-phone"></use>
               </svg>
               +7 (903) 291-68-95
             </a>
@@ -123,20 +128,20 @@
 
           <p class="footer__item is-mail col-md-4 col-lg-3 offset-lg-1">
             <svg class="icon" role="presentation">
-              <use xlink:href="./img/base/icons/sprite.svg#icon-sm-email"></use>
+              <use xlink:href="/img/base/icons/sprite.svg#icon-sm-email"></use>
             </svg>
             Электронная почта <a href="mailto:timujin.group@gmail.com">timujin.group@gmail.com</a> </p>
 
           <p class="footer__item is-phone col-md-4 col-lg-3">
             <svg class="icon" role="presentation">
-              <use xlink:href="./img/base/icons/sprite.svg#icon-sm-phone"></use>
+              <use xlink:href="/img/base/icons/sprite.svg#icon-sm-phone"></use>
             </svg>
             Контактный телефон: <span> +7 (903) 291-68-95 </span>
           </p>
           {# <div class="footer__item col-md-3">
             <a href="#" aria-label="facebook">
               <svg class="icon" role="presentation">
-                <use xlink:href="./img/base/icons/sprite.svg#icon-md-facebook"></use>
+                <use xlink:href="/img/base/icons/sprite.svg#icon-md-facebook"></use>
               </svg>
             </a>
           </div> #}

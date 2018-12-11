@@ -7,7 +7,7 @@
 
 // COLOR NAMES
 
-$grey-l20:                            hsl(0, 2%, 16%);
+// $grey-l20:                            hsl(0, 2%, 20%);
 $grey-l16:                            hsl(0, 2%, 16%);
 
 $red:                                 hsl(8, 38%, 58%);
@@ -28,23 +28,24 @@ $blue:                                hsl(248, 38%, 58%);
 
 $color-primary:                         $orange;
 $color-primary-l1:                      saturate(lighten($orange, 24), 10);
-$color-secondary:                     hsl(0, 2%, 16%);
+$color-secondary:                       $grey-l16;
 
 // Backgrounds
 $color-background-primary:            hsl(0, 0%, 100%);
+$color-background-secondary:          hsl(214, 3%, 95%);
 $color-background-highlight:            $color-primary;
 
 // Foregrounds / Inks
 $color-ink-headline:                    $color-secondary;
 $color-ink-highlight:                   $color-primary;
 $color-ink-normal:                      $color-secondary;
-$color-ink-muted:                       lighten($color-secondary, 20%);
+$color-ink-muted:                       lighten($color-secondary, 35%);
 // $color-ink-hint:                        hsl(214, 3%, 60%);
 // $color-ink-disabled:                    hsl(214, 3%, 60%);
 // $color-ink-icon:                        hsl(214, 3%, 60%);
-// $color-ink-border:                      hsl(214, 3%, 90%);
-$color-ink-link:                        $color-primary;
-$color-ink-link-hover:                  $blue;
+$color-ink-border:                    hsla(0, 0%, 0%, .12);
+$color-ink-link:                        darken($color-primary, 10%);
+$color-ink-link-hover:                  darken($color-primary, 20%);
 $color-ink-focus-outline:               lighten($color-primary, 25%);
 
 // $color-ink-dark-headline:             hsla(0, 0%, 0%, .87);
@@ -76,7 +77,7 @@ $color-ink-light-focus-outline:         lighten($color-primary, 25%);
 // 📰 LAYOUT
 // -----------------------------------------------------------------------------
 /* #region */
-$spacer-sm:                             .8rem;
+$spacer-sm:                             1rem;
 $spacer:                                $spacer-sm * 3; // empty line
 
 // Maps to generate spacing classes
@@ -91,30 +92,20 @@ $spacers: (
 
 // Maps to generate maximum width of the container for each breakpoint
 $container-max-widths: (
-  lg: 1044px, // Tablet in landscape
-  xl: 1200px, // Laptop
-  xxl: 1776px // Full HD - 1920x1080 and up
+  lg: 1010px, // Tablet in landscape
 );
-
-$outside-gaps:                          128px;
 
 $grid-breakpoints: (
   xs: 0,
   sm: 568px,
   md: 768px,
-  lg: 992px,
+  lg: 1010px,
 );
 
 // Grid
-$grid-columns-xs:                       4;
-$grid-columns-md:                       8;
 $grid-columns:                          12;
-$grid-gutter-0:                         0;
-$grid-gutter-xs:                        ($spacer-sm / 2);
 $grid-gutter-width:                     $spacer-sm;
-$grid-gutter-md:                        ($spacer-sm * 2);
 $grid-gutter-lg:                        $spacer;
-$grid-gutter-xl:                        ($spacer-sm * 4);
 
 /* #endregion */
 
@@ -125,12 +116,6 @@ $grid-gutter-xl:                        ($spacer-sm * 4);
 
 // stylelint-disable indentation
 $font-family-base:
- 'Helvetica Neue',
-  Helvetica,
-  Arial,
-  sans-serif;
-
-$font-family-headings:
  'Roboto',
   Helvetica,
   Arial,
@@ -138,6 +123,8 @@ $font-family-headings:
  'Apple Color Emoji',
  'Segoe UI Emoji',
  'Segoe UI Symbol';
+
+$font-family-headings: $font-family-base;
 
 $font-family-monospace:
  'Fira Code',
@@ -147,37 +134,37 @@ $font-family-monospace:
   monospace;
 // stylelint-enable indentation
 
-$font-size-sm:                          $spacer-sm * 1.5; // 12px
+$font-size-sm:                          1.2rem; // 12px
 $line-height-sm:                        1.333; // 16px
 
 $font-size-base-desktop:                1.4rem;
 $line-height-base-desktop:              1.429;
 
-$font-size-base:                        ($spacer-sm * 2); // 16px
-$line-height-base:                      1.5; // 24px
+$font-size-base:                        1.6rem;
+$line-height-base:                      1.25; // 20px
 
 $font-size-lg:                          1.8rem;
-$line-height-lg:                        1.556; // 28px
+$line-height-lg:                        1.667; // 30px
 
-$font-size-headline-sm:                 2rem; // 20px
-$line-height-headline-sm:               1.2; // 24px
+$font-size-headline-sm:                 $font-size-lg; // 20px
+$line-height-headline-sm:               auto; // 24px
 
-$font-size-headline-md:                 ($spacer-sm * 3); // 24px
+$font-size-headline-md:                 2.4rem; // 24px
 $line-height-headline-md:               line-height(24);
 $font-weight-headline-md:               500;
 
-$font-size-headline-lg:                 ($spacer-sm * 4); // 32px
+$font-size-headline-lg:                 3.2rem; // 32px
 $line-height-headline-lg:               line-height(32); // 40px
 $font-weight-headline-lg:               400;
 
-$font-size-headline-xl:                 $spacer-sm * 5; // 40px
+$font-size-headline-xl:                 4rem; // 40px
 $line-height-headline-xl:               line-height(40);
 $font-weight-headline-xl:               400;
 
 $font-size-display-2:                   $spacer-sm * 5;
 $line-height-display-2:                 line-height(40);
 
-$font-size-display-1:                   $spacer-sm * 8;
+$font-size-display-1:                   6.4rem;
 $line-height-display-1:                 line-height(64);
 
 $list-bullet:                           url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%225%22%20height%3D%227%22%20viewBox%3D%220%200%205%207%22%3E%3Ccircle%20cx%3D%222.5%22%20cy%3D%222.5%22%20r%3D%222.5%22%20fill-opacity%3D%22.38%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
@@ -192,6 +179,9 @@ $list-bullet:                           url('data:image/svg+xml;charset=UTF-8,%3
 $border-width:                          1px;
 
 // BOX BORDER RADIUS
+
+
+$border-radius-xs:                      1px;
 
 // Alerts, Cards, Rectangular Images
 $border-radius-sm:                      3px;
@@ -247,7 +237,7 @@ $panel-width:                           320px;
 $panel-width-lg:                        640px;
 
 // Modals
-$panel-width-xl:                        1054px;
+$panel-width-xl:                        1010px;
 
 
 /* #endregion */

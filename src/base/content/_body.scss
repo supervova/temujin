@@ -1,0 +1,152 @@
+// -----------------------------------------------------------------------------
+// DOCUMENT
+// -----------------------------------------------------------------------------
+
+body {
+  background-color: $color-background-primary;
+  color: $color-ink-normal;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  text-align: left;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-base-desktop;
+    line-height: $line-height-base-desktop;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// BODY COPY
+// -----------------------------------------------------------------------------
+
+// LINKS
+
+a {
+  color: $color-ink-link;
+  text-decoration: none;
+  transition: color $duration-xs $easing;
+
+  &:hover {
+    color: $color-ink-link-hover;
+    text-decoration: underline;
+  }
+}
+
+b,
+strong {
+  font-weight: 500;
+}
+
+// BLOCKS
+
+address,
+blockquote,
+dl,
+figure,
+ol,
+p,
+pre,
+ul {
+  margin: 0;
+  padding-top: ($spacer / 4);
+  padding-bottom: ($spacer / 4 * 3);
+}
+
+// LISTS
+
+ul:not([class]) {
+  list-style-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%226%22%20height%3D%2216%22%20viewBox%3D%220%200%206%2016%22%3E%3Ccircle%20cx%3D%223%22%20cy%3D%2211%22%20r%3D%222%22%20fill%3D%22%238D9093%22%2F%3E%3C%2Fsvg%3E');
+  padding: 0 0 0 16px;
+
+  @include media-breakpoint-up(md) {
+    padding: 0;
+  }
+}
+
+li,
+.list-caption {
+  margin-bottom: $spacer-sm;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+.list.is-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list.is-inline {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+dt {
+  font-weight: 500;
+}
+
+dd {
+  margin-left: 0;
+}
+
+// DIVIDERS
+
+// hr {
+//   border: 0;
+//   border-top: $border-width solid $color-ink-border;
+//   margin-top: ($spacer * 3 - .1rem);
+//   margin-bottom: ($spacer * 3);
+// }
+
+.hr.is-invisible {
+  border: 0;
+  margin-top: ($spacer * 2);
+  margin-bottom: ($spacer * 2);
+}
+
+// -----------------------------------------------------------------------------
+// HELPERS
+// -----------------------------------------------------------------------------
+
+.nobr {
+  white-space: nowrap;
+}
+
+.note {
+  color: $color-ink-muted;
+}
+
+.sr-only,
+%sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+.text-hide,
+%text-hide {
+  background-color: transparent;
+  border: 0;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+}

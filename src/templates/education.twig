@@ -1,0 +1,370 @@
+{% extends "/templates/base/base.twig" %}
+
+{% block config %}
+{{ parent() }}
+
+{% set
+  post = {
+    title: "Образовательное учреждение Тимуджин Групп",
+    description: "Профессиональное образование в области страховых выплат",
+    image: company.logo,
+    link: site.url ~ "/education",
+    hreflangEN: "",
+    bodyClasses: "p-education"
+  }
+%}
+{% endblock %}
+
+{% block html_head %}
+  {{ parent() }}
+  <style>
+    .p-education .header {
+        background-image:
+          -webkit-gradient(linear, left top, left bottom, from(rgba(42, 40, 40, 0.82)), to(rgba(42, 40, 40, 0.82))),
+          -webkit-gradient(linear, left top, left bottom, from(rgba(42, 40, 40, 0.46)), to(rgba(42, 40, 40, 0.46))),
+          url("/img/components/header/education.jpg");
+        background-image:
+          linear-gradient(rgba(42, 40, 40, 0.82), rgba(42, 40, 40, 0.82)),
+          linear-gradient(rgba(42, 40, 40, 0.46), rgba(42, 40, 40, 0.46)),
+          url("/img/components/header/education.jpg");
+    }
+
+    .container.is-main {
+      padding-top: 5.7rem;
+      padding-bottom: 3rem;
+    }
+  </style>
+{% endblock %}
+
+
+{# MAIN CONTENT ------------------------------------------------------------- #}
+{% block content %}
+  {# BODY #}
+  <article class="container is-main">
+    <h1 class="subhead"><span>Основные сведения</span> об&nbsp;образовательной организации</h1>
+    <table class="table is-definitions">
+      <tr>
+        <th>Наименование образовательной организации (полное)</th>
+        <td>Общество с&nbsp;ограниченной ответственностью «ТИМУДЖИН ГРУПП»</td>
+      </tr>
+      <tr>
+        <th>Наименование образовательной организации (сокращенное)</th>
+        <td>ООО «ТИМУДЖИН ГРУПП»</td>
+      </tr>
+      <tr>
+        <th>Дата создания</th>
+        <td>26&nbsp;января 2016 года</td>
+      </tr>
+      <tr>
+        <th>Учредитель</th>
+        <td>Ковалева Светлана Леонидовна</td>
+      </tr>
+      <tr>
+        <th>Место нахождения</th>
+        <td>109052, город Москва, улица Подъемная, дом&nbsp;12, строение&nbsp;1, этаж&nbsp;3, пом 325</td>
+      </tr>
+      <tr>
+        <th>Режим работы</th>
+        <td>С&nbsp;10:00 до&nbsp;19:00</td>
+      </tr>
+      <tr>
+        <th>График работы</th>
+        <td>ПН ‒ ПТ; СБ, ВС ‒ выходные</td>
+      </tr>
+      <tr>
+        <th>Телефон</th>
+        <td>+7 (903)2916895</td>
+      </tr>
+      <tr>
+        <th>E-mail</th>
+        <td>timujin.group@gmail.com</td>
+      </tr>
+    </table>
+
+    <hr class="hr is-invisible">
+
+    <h2 class="subhead"><span>Структура</span> и&nbsp;органы управления образовательной организацией</h2>
+    <h3 class="table-caption">О&nbsp;руководителе образовательной организации</h3>
+    <table class="table is-definitions">
+      <tr>
+        <th>Руководитель образовательной организации (в&nbsp;одном лице)</th>
+        <td>Корягин Константин Александрович</td>
+      </tr>
+      <tr>
+        <th>Должность руководителя</th>
+        <td>Генеральный директор</td>
+      </tr>
+      <tr>
+        <th>Контактные данные</th>
+        <td>+7 (903)2916895</td>
+      </tr>
+      <tr>
+        <th>Адрес электронной почты</th>
+        <td>timujin.group@gmail.com</td>
+      </tr>
+    </table>
+
+    <h3 class="table-caption">О&nbsp;персональном составе педагогических работников</h3>
+    <table class="table is-definitions">
+      <tr>
+        <th>ФИО преподавателя</th>
+        <td>Малуев Павел Александрович</td>
+      </tr>
+      <tr>
+        <th>Занимаемая должность</th>
+        <td>Преподаватель (по&nbsp;договору ГПХ)</td>
+      </tr>
+      <tr>
+        <th>Преподаваемые дисциплины</th>
+        <td>Выплаты страхового обеспечения на&nbsp;территории Российской Федерации</td>
+      </tr>
+      <tr>
+        <th>Ученая степень</th>
+        <td>Кандидат политических наук</td>
+      </tr>
+      <tr>
+        <th>Общий стаж работы</th>
+        <td>С&nbsp;2004 года</td>
+      </tr>
+      <tr>
+        <th>Стаж работы по&nbsp;специальности</th>
+        <td>С&nbsp;2006 года</td>
+      </tr>
+    </table>
+
+    <hr class="hr is-invisible">
+
+    <h2 class="subhead"><span>Документы</span> образовательной организации</h2>
+    <table class="table is-definitions">
+      <tr>
+        <th>Устав образовательной организации</th>
+        <td>
+          <ul class="list is-unstyled">
+            <li>
+              <a href="/docs/ustav-timudzhin-grupp.pdf" type="application/pdf" download>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use xlink:href="/img/base/icons/sprite.svg#icon-pdf"></use>
+                </svg>
+                Устав Тимуджин Групп
+              </a>
+            </li>
+            <li>
+              <a href="/docs/o-sozdanii-strukturnogo-podrazdeleniya-timudzhin-grupp.pdf" type="application/pdf" download>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use xlink:href="/img/base/icons/sprite.svg#icon-pdf"></use>
+                </svg>
+                О&nbsp;создании структурного подразделения Тимуджин Групп
+              </a>
+            </li>
+            <li>
+              <a href="/docs/o-sozdanii-strukturnogo-podrazdeleniya-timudzhin-grupp.pdf" type="application/pdf" download>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use xlink:href="/img/base/icons/sprite.svg#icon-pdf"></use>
+                </svg>
+                Положение о&nbsp;структурном подразделении Тимуджин Групп
+              </a>
+            </li>
+          </ul></td>
+      </tr>
+      <tr>
+        <th>Лицензия на&nbsp;осуществление образовательной деятельности (с&nbsp;приложениями)</th>
+        <td>
+          <a href="/docs/licenziya-039305-ot-20-04-2018.pdf" type="application/pdf" download>
+            <svg class="icon" role="presentation" focusable="false">
+              <use xlink:href="/img/base/icons/sprite.svg#icon-pdf"></use>
+            </svg>
+            Лицензия 039305 от&nbsp;20.04.2018
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>План финансово-хозяйственной деятельности образовательной организации, утвержденный в&nbsp;установленном законодательством Российской Федерации порядке, или бюджетные сметы образовательной организации</th>
+        <td><span class="note">Документ в&nbsp;разработке</span></td>
+      </tr>
+      <tr>
+        <th>Локальные нормативные акты</th>
+        <td><span class="note">Документы в&nbsp;разработке, <span class="nobr">2-4</span> файла</span></td>
+      </tr>
+      <tr>
+        <th>Правила внутреннего распорядка обучающихся</th>
+        <td><span class="note">Документ в&nbsp;разработке</span></td>
+      </tr>
+      <tr>
+        <th>Правила внутреннего трудового распорядка и&nbsp;коллективного договора</th>
+        <td><span class="note">Документ в&nbsp;разработке</span></td>
+      </tr>
+      <tr>
+        <th>Отчет о&nbsp;результатах самообследования</th>
+        <td>
+          <a href="/docs/otchet-o-rezultatax-samoobsledovaniya-timudzhin-grupp.pdf" type="application/pdf" download>
+            <svg class="icon" role="presentation" focusable="false">
+              <use xlink:href="/img/base/icons/sprite.svg#icon-pdf"></use>
+            </svg>
+            Отчет о&nbsp;результатах самообследования Тимуджин Групп
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>Документ о&nbsp;порядке оказания платных образовательных услуг</th>
+        <td>
+          <a href="/docs/forma-dogovora-na-obrazovatelnye-uslugi.pdf" type="application/pdf" download>
+            <svg class="icon" role="presentation" focusable="false">
+              <use xlink:href="/img/base/icons/sprite.svg#icon-pdf"></use>
+            </svg>
+            Форма договора на&nbsp;образовательные услуги ТГ
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>Предписания органов, осуществляющих государственный контроль (надзор) в&nbsp;сфере образования</th>
+        <td>
+          <a href="/docs/p-133-2018-ot-22-10-18.pdf" type="application/pdf" download>
+            <svg class="icon" role="presentation" focusable="false">
+              <use xlink:href="/img/base/icons/sprite.svg#icon-pdf"></use>
+            </svg>
+            П-133-2018 от&nbsp;22.10.18
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>Отчеты об&nbsp;исполнении таких предписаний </th>
+        <td><span class="note">Документ в&nbsp;разработке</span></td>
+      </tr>
+    </table>
+
+    <hr class="hr is-invisible">
+
+    <h2 class="subhead"><span>Общие сведения</span> об&nbsp;образовательных программах</h2>
+    <table class="table is-definitions">
+      <tr>
+        <th>О&nbsp;реализуемых уровнях образования</th>
+        <td>Основным видом деятельности образовательной организации является дополнительное профессиональное образование.</td>
+      </tr>
+      <tr>
+        <th>О&nbsp;формах обучения</th>
+        <td>Формы проведения занятий: очная, очно-заочная.</td>
+      </tr>
+      <tr>
+        <th>Нормативных сроках обучения</th>
+        <td>Сроки обучения определяются в&nbsp;соответствии с&nbsp;программой обучения группы, но&nbsp;составляют не&nbsp;менее 16&nbsp;учебных часов.</td>
+      </tr>
+      <tr>
+        <th>Об&nbsp;описании образовательной программы с&nbsp;приложением ее&nbsp;копии</th>
+        <td><p>Цель программы: совершенствование профессиональных компетенций, комплексное обновление теоретических и&nbsp;практических знаний, повышение профессионального уровня работников учреждений страхования Российской Федерации в&nbsp;условиях развития и&nbsp;модернизации системы страхового обеспечения Российской Федерации.
+
+          <p>Для достижения поставленной цели предусматривается решение следующих основных задач:</p>
+          <ul>
+            <li>Изучение нормативно-правовых актов, связанных с&nbsp;осуществлением страховых выплат пособий;</li>
+            <li>Изучение специфики реализации процедур осуществления страховых выплат, в&nbsp;том числе взаимодействия со&nbsp;страхователями и&nbsp;застрахованными лицами;</li>
+            <li>Изучение особенностей бюджетного, бухгалтерского и&nbsp;налогового учета страховых выплат;</li>
+          </ul>
+          <p>Слушатель в&nbsp;ходе освоения программы должен приобрести практический опыт&nbsp;— реализация процедур осуществления страховых выплат.</p>
+          <p>Содержание дополнительной профессиональной программы повышения квалификации учитывает квалификационные требования, указанные в&nbsp;справочнике ЕКС для должности «Руководитель подразделения».</p>
+          <p>Программа повышения квалификации «Выплаты страхового обеспечения на&nbsp;территории Российской Федерации» рассчитана на&nbsp;руководителей и&nbsp;работников Государственных учреждений страхования.</p>
+          К&nbsp;обучению допускаются лица, имеющие высшее образование и&nbsp;опыт работы в&nbsp;Государственном учреждении от&nbsp;3&nbsp;лет.
+          <p>
+            <a href="/docs/rabochaya-programma.pdf" type="application/pdf" download>
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="/img/base/icons/sprite.svg#icon-pdf"></use>
+              </svg>
+              Рабочая программа
+            </a>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <th>Об&nbsp;учебном плане с&nbsp;приложением его копии</th>
+        <td>Указан в&nbsp;документе программы <span class="nobr">(<svg class="icon" role="presentation" focusable="false"><use xlink:href="/img/base/icons/sprite.svg#icon-pdf"></use></svg><a href="/docs/rabochaya-programma.pdf" type="application/pdf" download>копия</a>)</span>
+        </td>
+      </tr>
+      <tr>
+        <th>О&nbsp;календарном учебном графике с&nbsp;приложением его копии</th>
+        <td>
+          Указан в&nbsp;документе программы <span class="nobr">(<svg class="icon" role="presentation" focusable="false"><use xlink:href="/img/base/icons/sprite.svg#icon-pdf"></use></svg><a href="/docs/rabochaya-programma.pdf" type="application/pdf" download>копия</a>)</span>
+          </td>
+      </tr>
+      <tr>
+        <th>О&nbsp;реализуемых образовательных программах с&nbsp;указанием учебных предметов, курсов, дисциплин (модулей), практики, предусмотренных соответствующей образовательной программой</th>
+        <td><strong>Наименование дисциплин (модулей) программы:</strong>
+          <ul>
+            <li>Прием и&nbsp;проверка полноты представленных документов на&nbsp;бумажном носителе и&nbsp;ввод данных в&nbsp;информационную систему</li>
+            <li>Назначение пособий</li>
+            <li>Выплата пособий</li>
+            <li>Осуществление удержаний</li>
+            <li>Подготовка отчетности и&nbsp;выдача справок о&nbsp;выплатах</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <th>О&nbsp;численности обучающихся по&nbsp;реализуемым образовательным программам за&nbsp;счет бюджетных ассигнований федерального бюджета, бюджетов субъектов Российской Федерации, местных бюджетов и&nbsp;по&nbsp;договорам об&nbsp;образовании за&nbsp;счет средств физических&nbsp;и (или) юридических лиц</th>
+        <td><strong>За&nbsp;2017‒2018 учебный год обучено:</strong>
+          <ul>
+            <li>за&nbsp;счет бюджетных ассигнований федерального бюджета ‒ 0&nbsp;человек;</li>
+            <li>за&nbsp;счет бюджетов субъектов Российской Федерации ‒ 0&nbsp;человек;</li>
+            <li>за&nbsp;счет местных бюджетов ‒ 0&nbsp;человек;</li>
+            <li>по&nbsp;договорам об&nbsp;образовании за&nbsp;счет средств физических&nbsp;и (или) юридических лиц ‒ 0&nbsp;человек.</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <th>О&nbsp;языках, на&nbsp;которых осуществляется образование (обучение)</th>
+        <td>Обучение осуществляется на&nbsp;русском языке</td>
+      </tr>
+      <tr>
+        <th>О&nbsp;трудоустройстве выпускников</th>
+        <td>Нет данных за&nbsp;2017‒2018 учебный год</td>
+      </tr>
+      <tr>
+        <th>О&nbsp;материально-техническом обеспечении образовательной деятельности</th>
+        <td><ul>
+            <li>Стол (парта ученическая) ‒ 8&nbsp;шт.</li>
+            <li>Стул ученический ‒ 16&nbsp;шт.</li>
+            <li>Стол преподавательский ‒ 1&nbsp;шт.</li>
+            <li>Кресло офисное ‒ 1&nbsp;шт.</li>
+            <li>Доска маркерная ‒ 1&nbsp;шт.</li>
+            <li>Проектор NEC&nbsp;VT 670 ‒ 1&nbsp;шт.</li>
+            <li>Экран для проектора Digis Optimal-C&nbsp;MW DSOC-1101 (160*160) ‒ 1&nbsp;шт.</li>
+            <li>Жалюзи оконные, вертикальные ‒ 2&nbsp;комплекта.</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <th>Обеспечение доступа в&nbsp;здания образовательной организации инвалидов и&nbsp;лиц с&nbsp;ограниченными возможностями здоровья</th>
+        <td><span class="note">Документ в&nbsp;разработке</span></td>
+      </tr>
+      <tr>
+        <th>Условия питания обучающихся, в&nbsp;том числе инвалидов и&nbsp;лиц с&nbsp;ограниченными возможностями здоровья</th>
+        <td><span class="note">Документ в&nbsp;разработке</span></td>
+      </tr>
+      <tr>
+        <th>Условия охраны здоровья обучающихся, в&nbsp;том числе инвалидов и&nbsp;лиц с&nbsp;ограниченными возможностями здоровья</th>
+        <td><span class="note">Документ в&nbsp;разработке</span></td>
+      </tr>
+      <tr>
+        <th>Доступ к&nbsp;информационным системам и&nbsp;информационно-телекоммуникационным сетям, в&nbsp;том числе приспособленным для использования инвалидами и&nbsp;лицами с&nbsp;ограниченными возможностями здоровья; электронные образовательные ресурсы, к&nbsp;которым обеспечивается</th>
+        <td><span class="note">Документ в&nbsp;разработке</span></td>
+      </tr>
+      <tr>
+        <th>Доступ обучающихся, в&nbsp;том числе приспособленные для использования инвалидами и&nbsp;лицами с&nbsp;ограниченными возможностями здоровья</th>
+        <td><span class="note">Документ в&nbsp;разработке</span></td>
+      </tr>
+      <tr>
+        <th>Наличие специальных технических средств обучения коллективного и&nbsp;индивидуального пользования для инвалидов и&nbsp;лиц с&nbsp;ограниченными возможностями здоровья</th>
+        <td><span class="note">Документ в&nbsp;разработке</span></td>
+      </tr>
+      <tr>
+        <th>О&nbsp;количестве вакантных мест для приема (перевода) по&nbsp;каждой образовательной программе, профессии, специальности, аправлению подготовки (на&nbsp;места, инансируемые за&nbsp;счет бюджетных ассигнований федерального бюджета, бюджетов субъектов Российской Федерации, местных бюджетов, по&nbsp;договорам об&nbsp;образовании за&nbsp;счет средств физических&nbsp;и (или) юридических лиц</th>
+        <td><ul>
+            <li>0&nbsp;вакантных мест для приема (перевода) по&nbsp;каждой образовательной программе, профессии, специальности, направлению подготовки (на&nbsp;места, финансируемые за&nbsp;счет бюджетных ассигнований федерального бюджета, бюджетов субъектов Российской Федерации, местных бюджетов;</li>
+            <li>10&nbsp;вакантных мест для обучения по&nbsp;договорам об&nbsp;образовании за&nbsp;счет средств физических&nbsp;и (или) юридических лиц.</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <th>О&nbsp;наличии и&nbsp;условиях предоставления обучающимся стипендий, мер социальной поддержки</th>
+        <td>Обучающимся не&nbsp;предоставляются стимендии и&nbsp;иные меры социальной поддержки: общежития, интернаты.</td>
+      </tr>
+      <tr>
+        <th>О&nbsp;поступлении финансовых и&nbsp;материальных средств и&nbsp;об&nbsp;их&nbsp;расходовании по&nbsp;итогам финансового года</th>
+        <td>Финансовые и&nbsp;материальные средства за&nbsp;период 2017‒2018 учебного года не&nbsp;поступали.</td>
+      </tr>
+    </table>
+  </article>
+{% endblock %}
+

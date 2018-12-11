@@ -1,0 +1,141 @@
+$table-cell-padding:                    ($spacer-sm - .1rem) 0 $spacer-sm;
+$table-accent-bg:                       $color-background-secondary;
+$table-hover-bg:                        darken($color-background-secondary, 3%);
+
+
+// -----------------------------------------------------------------------------
+// BASIC BOOTSTRAP STYLE TABLE
+// -----------------------------------------------------------------------------
+
+.table {
+  background-color: $color-background-primary;
+  margin-bottom: $spacer;
+  width: 100%;
+  max-width: 100%;
+
+  th,
+  td {
+    border-top: $border-width solid $color-ink-border;
+    padding: $table-cell-padding;
+    vertical-align: top;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (2 * $border-width) solid $color-ink-border;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $border-width) solid $color-ink-border;
+  }
+
+  .table {
+    background-color: $body-bg;
+  }
+}
+
+caption {
+  caption-side: bottom;
+  color: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: left;
+}
+
+
+// -----------------------------------------------------------------------------
+// DEFINITIONS
+// -----------------------------------------------------------------------------
+
+.table.is-definitions {
+  tr,
+  td,
+  th {
+    display: block;
+  }
+
+  tr {
+    @include media-breakpoint-up(md) {
+      display: table-row;
+    }
+  }
+
+  th {
+    font-weight: 500;
+    padding: ($spacer-sm * 1.5 - .1rem) 0 $spacer-sm;
+
+    @include media-breakpoint-up(md) {
+      display: table-cell;
+      padding: ($spacer-sm * 1.5 - .1rem) $spacer ($spacer-sm * 1.5) 0;
+      width: 41.666667%;
+    }
+  }
+
+  td {
+    border-top: 0;
+    padding: 0 0 ($spacer-sm * 1.5);
+
+    @include media-breakpoint-up(md) {
+      border-top: $border-width solid $color-ink-border;
+      display: table-cell;
+      padding-top: ($spacer-sm * 1.5 - .1rem);
+    }
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// BORDER VERSIONS
+// -----------------------------------------------------------------------------
+
+// ADD BORDERS
+
+// .table {
+//   border: $border-width solid $color-ink-border;
+
+//   th,
+//   td {
+//     border: $border-width solid $color-ink-border;
+//   }
+
+//   thead {
+//     th,
+//     td {
+//       border-bottom-width: (2 * $border-width);
+//     }
+//   }
+// }
+
+// REMOVE BORDERS
+
+// .table {
+//   th,
+//   td,
+//   thead th,
+//   tbody + tbody {
+//     border: 0;
+//   }
+// }
+
+
+// -----------------------------------------------------------------------------
+// ZEBRA-STRIPING
+// -----------------------------------------------------------------------------
+
+// tbody tr:nth-of-type(odd) {
+//   background-color: $table-accent-bg;
+// }
+
+
+// -----------------------------------------------------------------------------
+// HOVER EFFECT
+// -----------------------------------------------------------------------------
+
+// tbody tr:hover {
+//   background-color: $table-hover-bg;
+// }
+
+
+// Responsive tables
+/// @link https://zurb.com/playground/responsive-tables
+/// @link https://github.com/zurb/responsive-tables/
