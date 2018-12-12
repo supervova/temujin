@@ -1719,7 +1719,7 @@ caption {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  padding-top: 30px; }
+  padding-top: 20px; }
   .logo:hover {
     opacity: .8; }
 
