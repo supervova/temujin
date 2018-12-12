@@ -29,7 +29,7 @@ label {
   text-transform: uppercase;
   margin: 0 0 .8rem;
   overflow: visible;
-  padding: .9rem 12px .8rem 19px;
+  padding: 1rem;
   touch-action: manipulation;
   transition: border-color $easing $duration-xs;
   width: 100%;
@@ -49,6 +49,3 @@ label {
   }
 }
 
-.form__control.is-input {
-  height: 43px;
-}
